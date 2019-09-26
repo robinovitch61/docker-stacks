@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  jupyter:
+    container_name: jupyter
+    image: jupyter/pyspark-notebook:1386e2046833 # check for updates here: https://hub.docker.com/r/jupyter/pyspark-notebook/tags. Controls spark version.
+    volumes:
+      - ~/projects:/home/jovyan/work/projects
+      - ./setup_envs.sh:/usr/local/bin/before-notebook.d/setup_envs.sh
+    ports:
+      - 9999:9999
+    restart: unless-stopped
+    environment:
+      JUPYTER_ENABLE_LAB: 'yes'
+      GRANT_SUDO: 'yes'
+    command: >
+      sh -c "bash start-notebook.sh\
+                 --NotebookApp.token=$JUPYTER_PASSWORD\
+                 --NotebookApp.notebook_dir=/home/jovyan/work/projects\
+                 --port 9999"
