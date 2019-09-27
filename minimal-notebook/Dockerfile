@@ -30,7 +30,14 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     tzdata \
     unzip \
     nano \
+    vim \
     && rm -rf /var/lib/apt/lists/*
+
+# These commands configure git and ensure credentials are cached so you don't always have to relogin
+RUN git config --global user.name "Leo Robinovitch"
+RUN git config --global user.email "leorobinovitch@gmail.com"
+RUN git config --global core.editor "vim"
+RUN git config --global credential.helper "cache --timeout=3600000"
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID
