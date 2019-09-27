@@ -4,7 +4,8 @@ services:
 
   jupyter:
     container_name: jupyter
-    image: jupyter/pyspark-notebook:1386e2046833 # check for updates here: https://hub.docker.com/r/jupyter/pyspark-notebook/tags. Controls spark version.
+    image: jupyter/minimal-notebook # always get `latest` image on docker hub
+    # image: jupyter/pyspark-notebook:1386e2046833 # tagged/pinned image example. check for updates here: https://hub.docker.com/r/jupyter/pyspark-notebook/tags.
     volumes:
       - ~/:/home/jovyan/work/
       - ./setup_envs.sh:/usr/local/bin/before-notebook.d/setup_envs.sh

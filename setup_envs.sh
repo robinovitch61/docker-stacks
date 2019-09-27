@@ -6,6 +6,7 @@
 
 echo ""
 echo "Adding jupyterlab extensions..."
+rm -rf /home/jovyan/work/extensions
 mkdir /home/jovyan/work/extensions
 
 # Great extension by calpoly for better markdown formatting in cells: https://github.com/jupytercalpoly/jupyterlab-richtext-mode
