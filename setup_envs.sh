@@ -15,6 +15,7 @@ npm install && \
 npm run build && \
 jupyter labextension link .
 
+# Rebuild to get extensions to work
 jlpm build
 jupyter lab build
 echo "Added jupyterlab extensions!"
@@ -42,3 +43,18 @@ source activate py37 && python -m ipykernel install --user --name py37 --display
 source activate py37 # must activate/deactivate once to have changes displayed
 source activate base
 echo "Connected env to kernel!"
+
+cat << "EOF"
+
+WELCOME!
+
+     ██╗██╗   ██╗██████╗ ██╗   ██╗████████╗███████╗██████╗
+     ██║██║   ██║██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝██╔══██╗
+     ██║██║   ██║██████╔╝ ╚████╔╝    ██║   █████╗  ██████╔╝
+██   ██║██║   ██║██╔═══╝   ╚██╔╝     ██║   ██╔══╝  ██╔══██╗
+╚█████╔╝╚██████╔╝██║        ██║      ██║   ███████╗██║  ██║
+ ╚════╝  ╚═════╝ ╚═╝        ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+Take it from here...
+
+EOF
