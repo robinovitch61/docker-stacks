@@ -1,0 +1,20 @@
+{    
+    "shortcuts": [
+        {
+            "command": "kernelmenu:restart",
+            "keys": [
+                "Shift R"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+          "command": "notebook:run-all-above",
+          "keys": [
+            "Shift A"
+          ],
+          "selector": ".jp-Notebook:focus",
+          "title": "Run All Above",
+          "category": "Notebook Cell Operations"
+        },
+    ]
+}

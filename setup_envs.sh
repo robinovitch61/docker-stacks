@@ -9,16 +9,29 @@ echo "Adding jupyterlab extensions..."
 rm -rf /home/jovyan/work/extensions
 mkdir /home/jovyan/work/extensions
 
-# Great extension by calpoly for better markdown formatting in cells: https://github.com/jupytercalpoly/jupyterlab-richtext-mode
-git clone https://github.com/jupytercalpoly/jupyterlab-richtext-mode.git /home/jovyan/work/extensions/jupyter-scribe && \
-cd /home/jovyan/work/extensions/jupyter-scribe && \
-npm install && \
-npm run build && \
-jupyter labextension link .
+# # Great extension by calpoly for better markdown formatting in cells: https://github.com/jupytercalpoly/jupyterlab-richtext-mode SOME THINGS FINICKY
+# git clone https://github.com/jupytercalpoly/jupyterlab-richtext-mode.git /home/jovyan/work/extensions/jupyter-scribe && \
+# cd /home/jovyan/work/extensions/jupyter-scribe && \
+# npm install && \
+# npm run build && \
+# jupyter labextension link .
+# jlpm build
+# jupyter lab build
 
-# Rebuild to get extensions to work
-jlpm build
-jupyter lab build
+# # DrawIO https://github.com/QuantStack/jupyterlab-drawio CURRENTLY NOT WORKING
+# jupyter labextension install jupyterlab-drawio
+
+# Latex https://github.com/jupyterlab/jupyterlab-latex
+pip install jupyterlab_latex
+jupyter serverextension enable --sys-prefix jupyterlab_latex
+jupyter labextension install @jupyterlab/latex
+
+# Go to definition https://github.com/krassowski/jupyterlab-go-to-definition
+jupyter labextension install @krassowski/jupyterlab_go_to_definition
+
+# Table of contents https://github.com/ian-r-rose/jupyterlab-toc
+jupyter labextension install @jupyterlab/toc
+
 echo "Added jupyterlab extensions!"
 
 echo ""
