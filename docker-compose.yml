@@ -4,7 +4,7 @@ services:
 
   jupyter:
     container_name: jupyter
-    image: jupyter/minimal-notebook # always get `latest` image on docker hub
+    image: jupyter/minimal-notebook # always gets `latest` image on docker hub
     # image: jupyter/pyspark-notebook:1386e2046833 # tagged/pinned image example. check for updates here: https://hub.docker.com/r/jupyter/pyspark-notebook/tags.
     volumes:
       - ~/:/home/jovyan/work/
@@ -19,3 +19,13 @@ services:
                  --NotebookApp.token=$JUPYTER_PASSWORD\
                  --NotebookApp.notebook_dir=/home/jovyan/work/\
                  --port 9999"
+
+  rstudio:
+    container_name: rstudio
+    image: rocker/rstudio
+    volumes:
+      - ~/projects/rstudio:/home/rstudio
+    ports:
+      - 8787:8787
+    environment:
+      PASSWORD: $RSTUDIO_PASSWORD
