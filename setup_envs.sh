@@ -55,7 +55,9 @@ source activate py37 && \
      pip install scipy && \
      pip install matplotlib && \
      pip install seaborn && \
-     pip install ipywidgets
+     pip install ipywidgets && \
+     pip install requests && \
+     pip install BeautifulSoup4
 echo "Finished installing packages in py37!"
 
 echo ""
